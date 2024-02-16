@@ -1,0 +1,95 @@
+#ifndef BUNKER_JOB_H
+#define BUNKER_JOB_H
+
+typedef struct {
+    char* name;
+    int bunker_importance;
+    int post_bunker_importance;
+    char* field;
+    char* description;
+} Job;
+
+Job create_job(char *name, int importance, char *sphere, char *ability);
+
+Job jobs[] = {
+        {"Accountant", 2, 6, "Finance", ""},
+        {"Actor", 2, 6, "Arts", ""},
+        {"Architect", 0, 4, "Construction", ""},
+        {"Artist", 2, 6, "Arts", ""},
+        {"Baker", 2, 6, "Culinary", ""},
+        {"Barber", 1, 5, "Beauty", ""},
+        {"Bartender", 1, 5, "Hospitality", ""},
+        {"Botanist", 5, 9, "Biology", ""},
+        {"Builder", 2, 6, "Construction", ""},
+        {"Butcher", 2, 6, "Culinary", ""},
+        {"Carpenter", 1, 5, "Construction", ""},
+        {"Chef", 5, 9, "Culinary", ""},
+        {"Chemist", 5, 9, "Chemistry", ""},
+        {"Civil Engineer", 7, 9, "Engineering", ""},
+        {"Cleaner", 1, 5, "Maintenance", ""},
+        {"Dancer", 2, 6, "Arts", ""},
+        {"Dentist", 6, 9, "Dentistry", ""},
+        {"Detective", 7, 9, "Law Enforcement", ""},
+        {"Doctor", 5, 9, "Medicine", ""},
+        {"Electrician", 3, 7, "Construction", ""},
+        {"Engineer", 7, 9, "Engineering", ""},
+        {"Farmer", 4, 8, "Agriculture", ""},
+        {"Firefighter", 7, 9, "Emergency Services", ""},
+        {"Fisherman", 3, 7, "Maritime", ""},
+        {"Florist", 2, 6, "Botany", ""},
+        {"Gardener", 2, 6, "Horticulture", ""},
+        {"Hairdresser", 1, 5, "Beauty", ""},
+        {"Historian", 4, 8, "History", ""},
+        {"Interior Designer", 3, 7, "Design", ""},
+        {"Interpreter", 3, 7, "Language", ""},
+        {"Janitor", 1, 5, "Maintenance", ""},
+        {"Journalist", 4, 8, "Media", ""},
+        {"Judge", 8, 9, "Law", ""},
+        {"Landscaper", 3, 7, "Horticulture", ""},
+        {"Lawyer", 8, 9, "Law", ""},
+        {"Librarian", 3, 7, "Library Science", ""},
+        {"Linguist", 5, 9, "Language", ""},
+        {"Makeup Artist", 2, 6, "Beauty", ""},
+        {"Mechanic", 3, 7, "Engineering", ""},
+        {"Model", 2, 6, "Fashion", ""},
+        {"Musician", 2, 6, "Music", ""},
+        {"Nanny", 2, 6, "Childcare", ""},
+        {"Nurse", 4, 8, "Medicine", ""},
+        {"Optometrist", 6, 9, "Healthcare", ""},
+        {"Painter", 1, 5, "Arts", ""},
+        {"Paramedic", 5, 9, "Emergency Services", ""},
+        {"Pharmacist", 6, 9, "Pharmacy", ""},
+        {"Photographer", 3, 7, "Photography", ""},
+        {"Physicist", 6, 9, "Physics", ""},
+        {"Pilot", 6, 9, "Aviation", ""},
+        {"Plumber", 3, 7, "Construction", ""},
+        {"Police Officer", 7, 9, "Law Enforcement", ""},
+        {"Politician", 8, 9, "Politics", ""},
+        {"Professor", 5, 9, "Education", ""},
+        {"Psychologist", 6, 9, "Psychology", ""},
+        {"Radiologist", 6, 9, "Medical Imaging", ""},
+        {"Real Estate Agent", 4, 8, "Real Estate", ""},
+        {"Researcher", 5, 9, "Science", ""},
+        {"Salesperson", 2, 6, "Sales", ""},
+        {"Scientist", 6, 9, "Science", ""},
+        {"Sculptor", 2, 6, "Arts", ""},
+        {"Secretary", 2, 6, "Administration", ""},
+        {"Singer", 2, 6, "Music", ""},
+        {"Software Developer", 7, 9, "Technology", ""},
+        {"Soldier", 8, 9, "Military", ""},
+        {"Teacher", 5, 9, "Education", ""},
+        {"Translator", 3, 7, "Language", ""},
+        {"Travel Agent", 2, 6, "Tourism", ""},
+        {"Undertaker", 4, 8, "Mortuary Services", ""},
+        {"Urban Planner", 4, 8, "Urban Planning", ""},
+        {"Veterinarian", 4, 8, "Veterinary Medicine", ""},
+        {"Waiter/Waitress", 1, 5, "Hospitality", ""},
+        {"Web Developer", 7, 9, "Technology", ""},
+        {"Writer", 4, 8, "Writing", ""},
+        {"X-ray Technician", 5, 9, "Medical Imaging", ""},
+        {"Yoga Instructor", 2, 6, "Fitness", ""},
+        {"Zookeeper", 4, 8, "Animal Care", ""},
+        {"Zoologist", 6, 9, "Zoology", ""}
+};
+
+#endif //BUNKER_JOB_H

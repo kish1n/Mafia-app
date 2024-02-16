@@ -5,41 +5,24 @@
 
 #include "../../inc/person/age.h"
 
-typedef struct {
-    int (*generateWeightedAge)();
-} age;
 
+int ageGen() {
+    double randomValue = (double)rand() / RAND_MAX;
 
-int generateWeightedAge() {
+    int age16 = 16;
+    int age30 = 30;
+    int age45 = 45;
+    int age70 = 70;
 
-double randomValue = (double)rand() / RAND_MAX;
+    double weightedAge;
+    if (randomValue < 0.5) {
+        weightedAge = age16 + (randomValue * 2 * (age30 - age16));                   // 50% шанс быть младше 30
+    } else if (randomValue < 0.7) {
 
-int minAge = 16;
-int maxAge = 80;
-int midAge1 = 30; // 50% шанс быть меньше этого возраста
-int midAge2 = 45; // 70% шанс быть меньше этого возраста
+        weightedAge = age30 + ((randomValue - 0.5) * 2.5 * (age45 - age30));         // Дополнительно 20% шанс быть между 30 и 45
+    } else {
+        weightedAge = age45 + ((randomValue - 0.7) * (age70 - age45) / 0.3);         // Оставшиеся 30% для возраста от 45 до 70
+    }
 
-double weight1 = 0.50; // Вероятностные веса для возрастов
-double weight2 = 0.70;
-
-
-double p = (randomValue < weight1) ? (randomValue / weight1) : // Вероятностная функция
-           (randomValue < weight2) ? 1 - ((randomValue - weight1) / (weight2 - weight1)) :
-           ((1 - randomValue) / (1 - weight2));
-
-
-p = p * p; // Квадратичная корректировка
-
-
-int age = minAge + (int)(p * (maxAge - minAge)); // Вычисление возраста
-
-// Корректировка для создания "холма" вероятности около midAge1
-if (age > midAge1 && age < midAge2) {
-    double correctionFactor = (double)(age - midAge1) / (midAge2 - midAge1);
-    correctionFactor = 4 * correctionFactor * (1 - correctionFactor);
-    age = midAge1 + (int)(correctionFactor * (midAge2 - midAge1));
+    return (int)weightedAge;
 }
-
-return age;
-}
-
